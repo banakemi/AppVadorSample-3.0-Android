@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="show interstitial"
+        android:id="@+id/button"
+        android:enabled="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1280dp"
+            android:id="@+id/layout_main">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Show Ad"
+                android:id="@+id/button2"/>
+
+            <FrameLayout
+                android:layout_width="320dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/adlayout"
+                android:layout_below="@id/button2"></FrameLayout>
+<!--
+            <com.appvador.ads.AdView
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:id="@+id/adview3"
+                android:layout_below="@id/adlayout"
+                android:layout_marginTop="420dp"
+                pid="6bbbe1585dc2be1962a437db80636d01"
+                env="development"></com.appvador.ads.AdView>
+-->
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
