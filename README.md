@@ -94,7 +94,7 @@ AndroidManifest.xmlにアクティビティを追加してください。（既�
 
     import com.appvador.ads.*;
 
-インタースティシャル広告から使用されるInterstitialAdListenerをimplementします。
+インタースティシャル広告から使用されるAdListenerをimplementします。
 
     public class MyActivity extends Activity implements AdListener {
 
