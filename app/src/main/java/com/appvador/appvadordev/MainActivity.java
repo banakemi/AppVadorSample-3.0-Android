@@ -15,6 +15,8 @@ import com.appvador.ads.ErrorCode;
 public class MainActivity extends Activity {
     AdManager ad;
     AdManager adInterstitial;
+    Button btnShow;
+    Button btnShowInterstitial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class MainActivity extends Activity {
         initInterstitialAd();
 
         // show
-        Button btnShow = (Button)findViewById(R.id.button2);
+        btnShow = (Button)findViewById(R.id.button2);
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +38,18 @@ public class MainActivity extends Activity {
                     ad.showAd(adLayout);
                 } else {
                     Log.d("DEBUG", "ad is not ready.");
+                }
+            }
+        });
+
+        // show interstitial
+        final Activity self = this;
+        btnShowInterstitial = (Button)findViewById(R.id.button);
+        btnShowInterstitial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (adInterstitial.isReady()) {
+                    adInterstitial.showInterstitial(self);
                 }
             }
         });
@@ -50,7 +64,7 @@ public class MainActivity extends Activity {
     private void initAd() {
         // init
         ad = new AdManager(this, "be799a9af42fd94b851539335d3713ab");
-        ad.setPreloadType(AdManager.PreloadType.METADATA);
+        ad.setPreloadType(AdManager.PreloadType.ALL);
         ad.setAdListener(new AdListener() {
             @Override
             public void onReadyToPlayAd() {
@@ -96,18 +110,6 @@ public class MainActivity extends Activity {
     }
 
     private void initInterstitialAd() {
-        // show interstitial
-        final Activity self = this;
-        final Button btnShowInterstitial = (Button)findViewById(R.id.button);
-        btnShowInterstitial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (adInterstitial.isReady()) {
-                    adInterstitial.showInterstitial(self);
-                }
-            }
-        });
-
         // init interstitial
         adInterstitial = new AdManager(this, "be799a9af42fd94b851539335d3713ab");
         adInterstitial.setPreloadType(AdManager.PreloadType.ALL);

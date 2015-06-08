@@ -34,7 +34,7 @@
 
             <FrameLayout
                 android:layout_width="320dp"
-                android:layout_height="180dp"
+                android:layout_height="250dp"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/adlayout"
                 android:layout_below="@id/button2"></FrameLayout>
