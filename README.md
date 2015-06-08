@@ -199,10 +199,9 @@ AdListenerをimplementsし下記メソッドを実装してください。
 
 ### 2015/06/08 3.0
 
-bugfix
-
 - onReadyToPlayが2回呼ばれる現象を修正
 - ビデオのサイズ計算が特定の状態で動作しなくなる不具合を修正
+- AdManager.destroy()でAdViewを破棄するように変更
 
 ### 2015/06/04 3.0
 
