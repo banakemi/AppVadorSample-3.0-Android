@@ -129,6 +129,15 @@ onCreateメソッド等でAdManagerを作成します。
 
         mAdManager.setPreloadType(AdManager.PreloadType.ALL);
 
+背景色の変更
+--------------------
+
+広告枠の背景色を任意に設定できます。
+
+        mAdManager.setBackgroundColor(int color);
+
+
+
 広告の読込失敗、成功など各種通知の取得
 --------------------------------------
 
@@ -196,6 +205,11 @@ AdListenerをimplementsし下記メソッドを実装してください。
 リリースノート
 ---------------
 
+### 2015/06/15 3.0
+
+- 再生中の画面遷移により例外が発生する不具合を修正
+- 広告停止後にNullPointerExceptionが発生する不具合を修正
+- 広告枠の背景が設定できるsetBackgroundColor()を追加
 
 ### 2015/06/08 3.0
 
