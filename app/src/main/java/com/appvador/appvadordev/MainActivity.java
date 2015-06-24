@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
         // init
         ad = new AdManager(this, "be799a9af42fd94b851539335d3713ab");
         ad.setPreloadType(AdManager.PreloadType.ALL);
-        ad.setBackgroundColor(Color.RED);
+        ad.new Random().toSt)setBackgroundColor(Color.RED);
         ad.setAdListener(new AdListener() {
             @Override
             public void onReadyToPlayAd() {
