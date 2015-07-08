@@ -21,7 +21,7 @@ SDK(AppVadorSDK.jar)をプロジェクトに追加し、マニフェストに追
 
 まず、AndroidManifest.xmlへ下記の1行を追加してください。
 
-    <activity android:name="com.appvador.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    <activity android:name="com.appvador.ads.FullscreenActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
 次に、アプリケーションに下記のパーミッションを付与してください。
 
@@ -204,6 +204,9 @@ AdListenerをimplementsし下記メソッドを実装してください。
 
 リリースノート
 ---------------
+
+### 2015/07/08 3.0
+- 再生完了後の表示内容を調整
 
 ### 2015/06/25 3.0
 - メモリリークが発生する不具合を修正
