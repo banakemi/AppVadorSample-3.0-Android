@@ -81,6 +81,8 @@ Activityの破棄の際にはAdViewも併せてクリアしてください。
         super.onDestroy();
     }
 
+<!--
+
 インタースティシャル広告
 -------------------------
 
@@ -119,6 +121,8 @@ onCreateメソッド等でAdManagerを作成します。
     if (interstitial.isReady()) {
         interstitial.showInterstitial(self);
     }
+
+-->
 
 高速再生モードの利用
 --------------------
@@ -189,21 +193,18 @@ AdListenerをimplementsし下記メソッドを実装してください。
         public void onCloseAd() {
             // インタースティシャルなどの閉じるボタンのある広告フォーマットにて、広告枠が閉じられた際に呼ばれます。
         }
+
+        @Override
+        public void onReplayAd() {
+            // 動画広告が再生完了後にリプレイされた場合に呼ばれます。
+        }
     }
-
-広告の読み込みに失敗した際は、failedToReceiveAdメソッドにエラーコードが渡されます。
-エラーコードの内容はそれぞれ下記の通りです。
-
-| 定数 | メッセージ | 内容 |
-| ---- | ---------- | ---- |
-| NO_AD | No ads found. | 配信可能な広告がありません。 |
-| PUBLICATION_NOT_FOUND | Publication not found. Please check publication id. | 広告枠が見つかりません。広告枠IDを確認してください。 |
-| NETWORK_ERROR | Unable to connect to server. | サーバーに接続できませんでした。ネットワーク環境に問題があります。 |
-| SERVER_ERROR | Invalid response from server. | サーバーからのレスポンスが不正でした。広告リクエスト中に切断などの問題が発生しました。 |
-| INTERNAL_ERROR | Unable to serve ad due to invalid internal state. | 広告の配信に失敗しました。 |
 
 リリースノート
 ---------------
+
+### 2015/07/21 3.01
+- リプレイ通知機能を追加
 
 ### 2015/07/08 3.0
 - 再生完了後の表示内容を調整
