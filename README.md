@@ -19,9 +19,18 @@ Android 2.3以降にインストール可能ですが、内部でAndroid 4.0の�
 SDK(AppVadorSDK.jar)をプロジェクトに追加し、マニフェストに追記します。
 追加するのは下記3点です。
 
-まず、AndroidManifest.xmlへ下記の1行を追加してください。
+まず、AndroidManifest.xmlへ下記の1行（フルスクリーンプレイヤーのアクティビティ）を追加してください。
 
     <activity android:name="com.appvador.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+動画広告の再生には、Androidのハードウェアアクセラレーションが必要です。
+アプリケーション全体で有効化するには下記の記述を追加ください。
+
+    <application
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        ...
+        android:hardwareAccelerated="true"> // この行を追加。falseになっている場合はtrueにする
 
 次に、アプリケーションに下記のパーミッションを付与してください。
 
