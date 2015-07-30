@@ -19,9 +19,18 @@ Android 2.3以降にインストール可能ですが、内部でAndroid 4.0の�
 SDK(AppVadorSDK.jar)をプロジェクトに追加し、マニフェストに追記します。
 追加するのは下記3点です。
 
-まず、AndroidManifest.xmlへ下記の1行を追加してください。
+まず、AndroidManifest.xmlへ下記の1行（フルスクリーンプレイヤーのアクティビティ）を追加してください。
 
     <activity android:name="com.appvador.ads.FullscreenActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+動画広告の再生には、Androidのハードウェアアクセラレーションが必要です。
+アプリケーション全体で有効化するには下記の記述を追加ください。
+
+    <application
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        ...
+        android:hardwareAccelerated="true"> // この行を追加。falseになっている場合はtrueにする
 
 次に、アプリケーションに下記のパーミッションを付与してください。
 
@@ -203,13 +212,21 @@ AdListenerをimplementsし下記メソッドを実装してください。
 リリースノート
 ---------------
 
+### 2015/07/21 3.02
+
+- ハードウェアアクセラレーションの有効チェック機能を追加
+- 全画面プレイヤーにおけるハードウェアアクセラレーション有効化の追加
+
 ### 2015/07/21 3.01
+
 - リプレイ通知機能を追加
 
 ### 2015/07/08 3.0
+
 - 再生完了後の表示内容を調整
 
 ### 2015/06/25 3.0
+
 - メモリリークが発生する不具合を修正
 - Androidの一部端末でMediaPlayerクラスのバグにより動画が再生されない不具合に対策を追加
 
