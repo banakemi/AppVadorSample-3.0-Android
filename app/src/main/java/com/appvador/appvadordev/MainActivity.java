@@ -107,6 +107,11 @@ public class MainActivity extends Activity {
             public void onCloseAd() {
                 Log.d("DEBUG", "onCloseAd");
             }
+
+            @Override
+            public void onReplayAd() {
+                Log.d("DEBUG", "onReplayAd");
+            }
         });
         ad.load();
     }
@@ -155,6 +160,11 @@ public class MainActivity extends Activity {
             @Override
             public void onCloseAd() {
                 Log.d("DEBUG", "onCloseAd");
+            }
+
+            @Override
+            public void onReplayAd() {
+                Log.d("DEBUG", "onReplayAd");
             }
         });
         adInterstitial.load();
