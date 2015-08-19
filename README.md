@@ -209,8 +209,27 @@ AdListenerをimplementsし下記メソッドを実装してください。
         }
     }
 
+proguard
+--------
+
+proguardを使用してビルドする場合、proguard-rule.pro等の設定ファイルに以下を記述ください。
+
+    -keepclassmembers class com.appvador.** { public *; }
+    -keep public class com.appvador.**
+    -keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
+    -keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {*;}
+    -keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {*;}
+
 リリースノート
 ---------------
+
+### 2015/08/19 3.04
+
+- PreloadType.METAの場合もローカルキャッシュを行うように修正
+
+### 2015/08/07 3.03
+
+- 動画広告枠のInView検知ロジックを修正
 
 ### 2015/07/21 3.02
 
