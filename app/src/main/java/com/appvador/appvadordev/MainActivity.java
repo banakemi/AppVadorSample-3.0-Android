@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
     private void initAd() {
         // init
         ad = new AdManager(this, "be799a9af42fd94b851539335d3713ab");
-        ad.setPreloadType(AdManager.PreloadType.ALL);
+        ad.setPreloadType(AdManager.PreloadType.METADATA);
         ad.setBackgroundColor(Color.RED);
         ad.setAdListener(new AdListener() {
             @Override
