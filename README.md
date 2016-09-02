@@ -64,7 +64,7 @@ AdViewから使用されるAdListenerをimplementします。
 
 onCreateメソッド等でAdManagerを作成し、広告の準備を行います。
 
-    AdView mAdManager = new AdManager(this, "be799a9af42fd94b851539335d3713ab");
+    AdManager mAdManager = new AdManager(this, "be799a9af42fd94b851539335d3713ab");
     mAdManager.setAdListener(this);
     mAdManager.load();
 
